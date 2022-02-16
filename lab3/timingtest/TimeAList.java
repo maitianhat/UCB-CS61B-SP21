@@ -25,8 +25,8 @@ public class TimeAList {
         AList<Integer> Ns = new AList<>();
         AList<Double> times = new AList<>();
 
-        for (int i = 0; i < 15; i++) {
-            int maxValue = (int) (Math.pow(2, i) * 1000);
+        for (int i = 0; i < 8; i++) {
+            int maxValue = VALUES[i] * 1000;
             AList<Integer> list = new AList<>();
 
             Stopwatch sw = new Stopwatch();
@@ -42,4 +42,5 @@ public class TimeAList {
         // print
         printTimingTable(Ns, times, Ns);
     }
+    private static final int[] VALUES = new int[]{1, 2, 4, 8, 16, 32, 64, 128};
 }

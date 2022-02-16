@@ -31,7 +31,7 @@ public class TimeSLList {
         SLList<Integer> list = new SLList<>();
         for (int i = 0; i < 8; i++) {
             lastMaxValue = maxValue;
-            maxValue = (int) (Math.pow(2, i) * 1000);
+            maxValue = VALUES[i] * 1000;
             for (int j = lastMaxValue; j < maxValue; j++) {
                 list.addLast(j);
             }
@@ -51,5 +51,6 @@ public class TimeSLList {
         printTimingTable(Ns, times, opCount);
     }
 
-    private static final int MAX_OPS = 1000;
+    private static final int MAX_OPS = 10000;
+    private static final int[] VALUES = new int[]{1, 2, 4, 8, 16, 32, 64, 128};
 }
